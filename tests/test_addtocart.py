@@ -26,18 +26,16 @@ class TestAddToCart():
         time.sleep(5)
         self.search_page.search(keyword['keyword'])
         self.add_to_cart_page.click_product()
-        time.sleep(5)
-        clicked_product = self.add_to_cart_page.get_element_text(self.add_to_cart_page.PRODUCT_NAME).lower()
         
         self.add_to_cart_page.click_add_to_cart_button()
         self.add_to_cart_page.click_cross_icon()
         self.add_to_cart_page.click_cart_icon()
 
-        # cart_product = self.add_to_cart_page.get_element_text(self.add_to_cart_page.CART_PRODUCT).lower()
+        cart_product = self.add_to_cart_page.get_element_text(self.add_to_cart_page.CART_PRODUCT).lower()
 
         time.sleep(3)
 
-        assert_true(keyword['keyword'].lower() in clicked_product, "The product clicked does not match the product on the cart")
+        assert_true(keyword['keyword'].lower() in cart_product, "The product clicked does not match the product on the cart")
 
 
 

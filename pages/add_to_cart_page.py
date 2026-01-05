@@ -7,7 +7,7 @@ class AddToCartPage(BasePage):
     ADD_TO_CART_BUTTON = (By.XPATH,"//button[contains(@class,'pdp-button pdp-button_type_text pdp-button_theme_orange pdp-button_size_xl')]")
     CROSS_ICON = (By.XPATH,"//i[contains(@class,'next-icon next-icon-close next-icon-small')]")
     CART_ICON = (By.XPATH,"//span[contains(@class,'cart-icon-daraz')]//*[name()='svg']")
-    CART_PRODUCT = (By.XPATH,"//a[@id='automation-link-from-title-to-prod-item_i81b75b08']")
+    CART_PRODUCT = (By.XPATH,"//a[contains(@class,'automation-link-from-title-to-prod')]")
 
     def __init__(self,driver):
         super().__init__(driver)
